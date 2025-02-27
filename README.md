@@ -4,13 +4,13 @@ NewsScope is a modern news aggregator application built with React, TypeScript, 
 - 🔍 **Search & Filter:** Users can search for articles and filter results by date, category, and source.
 - 📌 **Personalized Feed:** Users can customize their news feed by selecting preferred sources and categories.
 - 📱 **Responsive Design:** Optimized for mobile and desktop viewing.
-- 🚀 **Powered by React Query:** Efficient data fetching and caching for a seamless experience.
+
 ## Tech Stack
 - **React** (with TypeScript)
 - **React Router** for navigation
-- **React Query** for data fetching and caching
 - **Tailwind CSS** for styling
 - **Docker** for containerization
+  
 ## Installation & Setup
 ### Prerequisites
 Ensure you have the following installed:
