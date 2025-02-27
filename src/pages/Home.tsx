@@ -29,8 +29,6 @@ export default function Home() {
   const [page, setPage] = useState(1);
 
   const debouncedQuery = useDebounce(query, 500);
-
-
   
   const { news, loading } = useGetNews({
     query: debouncedQuery,
