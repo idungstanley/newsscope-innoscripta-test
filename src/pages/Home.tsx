@@ -18,6 +18,7 @@ import { CATEGORIES, DEFAULT_KEYS, MENU_ITEMS } from "../constants";
 import useDebounce from "../hooks/useDebounce";
 import ArticleCard from "../components/ArticleCard";
 import SearchBar from "../components/SearchBar";
+import { Loader } from "../components/Loader";
 
 const { RangePicker } = DatePicker;
 
@@ -98,7 +99,10 @@ export default function Home() {
                 size="large"
                 onChange={onChange}
               />
-          </div>
+      </div>
+      {loading ? (
+        <Loader/>
+      ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {news.map(({ id, title, url, source, description, publishedAt, urlToImage }) => (
               <Spin key={id} spinning={loading}>
@@ -113,6 +117,7 @@ export default function Home() {
               </Spin>
             ))}
           </div>
+      )}
           {!news.length && (
             <div className="p-24 bg-white rounded-md">
               <Empty description="No news found" />
