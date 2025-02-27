@@ -38,7 +38,11 @@ Ensure you have the following installed:
    ```
 
 4. **Run the development server:**
-	@@ -47,20 +50,18 @@ Ensure you have the following installed:
+   ```sh
+   npm run dev
+   ```
+   The app will be available at `http://localhost:5173` (if using Vite).
+
 ## Running with Docker
 1. **Build the Docker image:**
    ```sh
