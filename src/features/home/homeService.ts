@@ -4,8 +4,8 @@ import axios from "axios";
 
 import { v4 as uuidv4 } from "uuid";
 import { NewsApi, NewsApiReq, NewsType, ParamsType, GetNewsHook, NewsApiArticle, GuardianArticle, NYTArticle } from "./home.interface";
-import { shuffle } from "../../utils/shuffle";
 import { guardianQueryParams, newsApiQueryParams, nytQueryParams } from "../../utils/helpers";
+import { shuffle } from "../../utils/shuffle";
 
 export const fetchNewsApi = async ({
     query,
