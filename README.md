@@ -1,66 +1,50 @@
-# NewsScope-innoscripta-test
-NewsScope is a modern news aggregator application built with React, TypeScript, and React Query. It fetches and displays news articles from multiple sources, allowing users to search, filter, and customize their news feed.
+# React + TypeScript + Vite
 
-## Features
-- 🔍 **Search & Filter:** Users can search for articles and filter results by date, category, and source.
-- 📌 **Personalized Feed:** Users can customize their news feed by selecting preferred sources and categories.
-- 📱 **Responsive Design:** Optimized for mobile and desktop viewing.
-- 🚀 **Powered by React Query:** Efficient data fetching and caching for a seamless experience.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Tech Stack
-- **React** (with TypeScript)
-- **React Router** for navigation
-- **React Query** for data fetching and caching
-- **Tailwind CSS** for styling
-- **Docker** for containerization
+Currently, two official plugins are available:
 
-## Installation & Setup
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-### Prerequisites
-Ensure you have the following installed:
-- Node.js (v16+ recommended)
-- Docker (optional, for containerized deployment)
+## Expanding the ESLint configuration
 
-### Steps
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/idungstanley/newsScope-innoscripta-test.git
-   cd newsScope-innoscripta-test
-   ```
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-2. **Install dependencies:**
-   ```sh
-   npm install
-   ```
+- Configure the top-level `parserOptions` property like this:
 
-3. **Create a `.env` file** in the root directory and add your API keys:
-   ```env
-   REACT_APP_NEWS_API_KEY=your_api_key_here
-   ```
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-4. **Run the development server:**
-   ```sh
-   npm run dev
-   ```
-   The app will be available at `http://localhost:5173` (if using Vite).
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-## Running with Docker
-1. **Build the Docker image:**
-   ```sh
-   docker build -t newsScope-innoscripta-test .
-   ```
-2. **Run the container:**
-   ```sh
-   docker run -p 3000:3000 newsScope-innoscripta-test
-   ```
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
 
-## Usage
-- Navigate to `/` to browse news articles.
-- Go to `/preferences` to set your preferred sources and categories.
-- Search and filter articles using the search bar.
-
-## Contributing
-Contributions are welcome! Feel free to open issues or submit pull requests.
-
-## License
-MIT License © 2025 NewsScope Team
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```
