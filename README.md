@@ -24,8 +24,8 @@ Ensure you have the following installed:
 ### Steps
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/idungstanley/newsScope-innoscripta-test.git
-   cd newsScope-innoscripta-test
+   git clone https://github.com/idungstanley/newsscope-innoscripta-test.git
+   cd newsscope-innoscripta-test
    ```
 
 2. **Install dependencies:**
@@ -35,7 +35,10 @@ Ensure you have the following installed:
 
 3. **Create a `.env` file** in the root directory and add your API keys:
    ```env
-   REACT_APP_NEWS_API_KEY=your_api_key_here
+   VITE_GUARDIAN_API_KEY=your_api_key_here
+   VITE_NEWS_API_KEY=your_api_key_here
+   VITE_NYT_API_KEY=your_api_key_here
+
    ```
 
 4. **Run the development server:**
@@ -47,20 +50,18 @@ Ensure you have the following installed:
 ## Running with Docker
 1. **Build the Docker image:**
    ```sh
-   docker build -t newsScope-innoscripta-test .
+   docker build -t newshub .
    ```
 2. **Run the container:**
    ```sh
-   docker run -p 3000:3000 newsScope-innoscripta-test
+   docker run -p 5173:5173 newshub
    ```
 
 ## Usage
 - Navigate to `/` to browse news articles.
-- Go to `/preferences` to set your preferred sources and categories.
 - Search and filter articles using the search bar.
+- pagination
 
-## Contributing
-Contributions are welcome! Feel free to open issues or submit pull requests.
 
 ## License
 MIT License © 2025 NewsScope Team
