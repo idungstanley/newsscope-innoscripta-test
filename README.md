@@ -41,7 +41,7 @@ Ensure you have the following installed:
    ```sh
    npm run dev
    ```
-   The app will be available at `http://localhost:5173` (if using Vite).
+   The app will be available at `http://localhost:5173`.
 
 ## Running with Docker
 1. **Build the Docker image:**
