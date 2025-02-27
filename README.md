@@ -16,6 +16,10 @@ NewsScope is a modern news aggregator application built with React, TypeScript, 
 Ensure you have the following installed:
 - Node.js (v16+ recommended)
 - Docker (optional, for containerized deployment)
+
+### Branch
+- development
+  
 ### Steps
 1. **Clone the repository:**
    ```sh
@@ -24,7 +28,7 @@ Ensure you have the following installed:
    ```
 
 2. **Install dependencies:**
-	@@ -35,7 +35,10 @@ Ensure you have the following installed:
+  Ensure you have the following installed:
 
 3. **Create a `.env` file** in the root directory and add your API keys:
    ```env
